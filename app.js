@@ -9,6 +9,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Add Mongo BBDD cx module file
+require('./lib/connectMongoose');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'ejs');
@@ -21,6 +24,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * Rutas del Api
+ */
+app.use('/api/ads', require('./routes/api/ads'))
+
+ /**
+ * Rutas del Website
+ */
 // Ejemplo de middleware añadido
 app.use('/prueba', function(req, res, next){
   // hay dos opciones

@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'NodePop' });
 });
 
 // GET /parametroenruta... Ver el código de Javier oara cer cómo se envía el parámetro en ruta

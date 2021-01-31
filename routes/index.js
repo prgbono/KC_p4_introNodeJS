@@ -1,6 +1,7 @@
 var express = require('express');
-const { route } = require('./users');
+// const { route } = require('./users');
 var router = express.Router();
+// TODO: Toda validación con express-validator
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

@@ -16,14 +16,14 @@ const adSchema = mongoose.Schema({
   },
   isType: {
     type: String,
-    enum: ["vende", "busca"]
+    enum: ["vende", "busca"],
+  	required: true
 	},
   price: {
     type: Number,
 	},
   image: {
-    data: Buffer,
-    contentType: String
+    type: String,
   },    
   tags: {
     type: String,
@@ -36,7 +36,9 @@ const adSchema = mongoose.Schema({
   // 	trim: true,
   // 	required: true
   // },
-})
+}, {
+  collection: 'anuncios'
+});
 
 // Model
 const Ad = mongoose.model('Ad', adSchema);

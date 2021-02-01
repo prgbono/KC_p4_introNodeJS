@@ -12,7 +12,7 @@ const adSchema = mongoose.Schema({
   description: {
   	type: String,
   	trim: true,
-  	required: true
+  	// TODO: Test all validations and also if this is not required
   },
   isType: {
     type: String,
@@ -28,14 +28,7 @@ const adSchema = mongoose.Schema({
   tags: {
     type: String,
     enum: ["work", "lifestyle", "motor", "mobile"]
-	},
-
-  //TODO: test 
-  // name, description: {
-  // 	type: String,
-  // 	trim: true,
-  // 	required: true
-  // },
+	}
 }, {
   collection: 'anuncios'
 });

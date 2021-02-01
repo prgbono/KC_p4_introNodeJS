@@ -16,7 +16,7 @@ router.get('/', async function(req, res, next){
   }
 });
 
-// POST /api/ads
+// POST /api/ads (body)
 router.post('/', async (req, res, next) => {
   try {
     const adData = req.body;
@@ -31,6 +31,39 @@ router.post('/', async (req, res, next) => {
     next(error);
   }
 });
+
+// PUT /api/ads:id (body)
+router.put('/:id', async (req, res, next) =>{
+  try {
+    const _id = req.params.id;
+    const adData = req.body;
+    const updatedAd = await Ad.findOneAndUpdate({ _id }, adData, {
+      new: true, // otherwise it doesn't retrieve the updated document
+      useFindAndModify: false
+    });
+
+    if (!updatedAd) {
+      return res.status(404).json({error: 'not found'});
+    }
+
+    res.json({ result: updatedAd});
+  } 
+  catch (error) {
+    next(error)
+  }
+});
+
+// DELETE /api/ads:id 
+router.delete('/:id', async(req, res, next) =>{
+  try {
+    const _id = req.params.id;
+    await Ad.deleteOne({ _id }); // === { _id: _id}
+    res.json();
+  } 
+  catch (error) {
+    next(error);
+  }
+})
 
 //TODO:
 // GET /api/ad:id

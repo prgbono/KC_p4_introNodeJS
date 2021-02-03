@@ -1,26 +1,54 @@
 {
   "anuncios": [ 
   {
-    "name": "6. Football at the beach", 
+    "name": "Mobile phone", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
     "isType": "busca",
-    "price": 230.15,
-    "image": "AdMock3_sports.jpeg",
-    "tags": ["mobile"]
+    "price": 350.15,
+    "image": "mobile.jpg",
+    "tags": ["mobile", "lifestyle", "work"]
   }, {
-    "name": "6. Cricket",
+    "name": "Motorbike",
     "isType": "vende", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
-    "price": 50.00,
-    "image": "cricket.jpeg",
-    "tags": ["lifestyle", "mobile"]
+    "price": 1500.00,
+    "image": "motorbike.jpg",
+    "tags": ["lifestyle", "motor"]
   }, {
-    "name": "6. Surf",
-    "isType": "vende", 
+    "name": "Agenda",
+    "isType": "busca", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
-    "price": 80.00,
-    "image": "surf.jpeg",
+    "price": 8.00,
+    "image": "agenda.jpg",
     "tags": ["lifestyle", "work"]
+  }, {
+    "name": "Mesa",
+    "isType": "vende", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
+    "price": 180.00,
+    "image": "desk.jpg",
+    "tags": ["work"]
+  }, {
+    "name": "Televisión",
+    "isType": "busca", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
+    "price": 280.00,
+    "image": "tv.jpg",
+    "tags": ["work", "lifestyle"]
+  }, {
+    "name": "Bicicleta",
+    "isType": "vende", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
+    "price": 70.00,
+    "image": "bicycle.jpg",
+    "tags": ["lifestyle", "motor"]
+  }, {
+    "name": "Tabla de padel surf",
+    "isType": "busca", 
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
+    "price": 60.00,
+    "image": "padel.jpg",
+    "tags": ["lifestyle"]
   }]
 }
 

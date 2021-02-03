@@ -1,21 +1,21 @@
 {
   "anuncios": [ 
   {
-    "name": "Football at the beach", 
+    "name": "6. Football at the beach", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
     "isType": "busca",
     "price": 230.15,
     "image": "AdMock3_sports.jpeg",
     "tags": ["mobile"]
   }, {
-    "name": "Cricket",
+    "name": "6. Cricket",
     "isType": "vende", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
     "price": 50.00,
     "image": "cricket.jpeg",
     "tags": ["lifestyle", "mobile"]
   }, {
-    "name": "Surf",
+    "name": "6. Surf",
     "isType": "vende", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
     "price": 80.00,

@@ -3,7 +3,6 @@ var router = express.Router();
 
 const Ad = require('../../models/Ad');
 const asyncHandler = require('express-async-handler');
-// Reason of using this library -> Try-catch unhandled exceptions -> https://zellwk.com/blog/async-await-express/
 
 // GET /api/ads
 router.get('/', asyncHandler(async function(req, res){  

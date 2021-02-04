@@ -1,5 +1,6 @@
 require('./../lib/connectMongoose');
 const Ad = require('./../models/Ad');
+const mongoose = require('mongoose');
 
 async function initDB(){
   try {
@@ -17,12 +18,13 @@ async function initDB(){
     await Ad.insertMany(adsFromJson.anuncios);
     console.log(`       ...new ads added to db`)
 
-    // Exit script. https://nodejs.dev/learn/how-to-exit-from-a-nodejs-program
-    process.exit(0); 
+    // Close db 
+    mongoose.connection.close();
+
   } catch (error) {
     console.log('It has been some error while the DB init script, err: ',error);
   }
 }
 
 initDB();
-//TODO: Cerrar la BBDD??? mongoose.connection.close();
+

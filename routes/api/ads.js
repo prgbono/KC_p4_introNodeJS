@@ -4,9 +4,22 @@ var router = express.Router();
 const Ad = require('../../models/Ad');
 const asyncHandler = require('express-async-handler');
 
-// GET /api/ads
+// GET /api/ads -> List ads
 router.get('/', asyncHandler(async function(req, res){  
-  const response = await Ad.find();
+
+  const isType = req.query.isType;
+  // const filterByName = req.query.filterByName;
+  // const filterByTags = req.query.filterByTags;
+  // const filterByPrice = req.query.filterByPrice;
+
+  const filter = {};
+  if (isType) {filter.isType = isType};
+  // if (filterByName) {filter.filterByName = filterByName}
+  // if (filterByTags) {filter.filterByTags = filterByTags}
+  // if (filterByPrice) {filter.filterByPrice = filterByPrice}
+
+  // const response = await Ad.find();
+  const response = await Ad.list(filter);
   res.json(response);
 }));
 

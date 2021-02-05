@@ -25,3 +25,12 @@ Remove an ad.
 ### Advertisement model:
 See nodepop/models/Ad.js
 
+### Images:
+We can get images stored in the server directly with the url:
+http://localhost:3000/images/<nombreRecurso>
+
+### Filters:
+By property isType -> http://localhost:3000/api/ads?isType=<value>
+  <value> is enum: ["vende", "busca"]
+
+//TODO: DEcidir si tag va a ser enum -> enum: ["work", "lifestyle", "motor", "mobile"]

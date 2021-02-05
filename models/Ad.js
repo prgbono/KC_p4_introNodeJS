@@ -28,11 +28,26 @@ const adSchema = mongoose.Schema({
   },    
   tags: {
     type: [String],
+    // TODO: Let new tags?
     // enum: ["work", "lifestyle", "motor", "mobile"]
 	}
 }, {
   collection: 'anuncios'
 });
+
+// adSchema.statics.list = function(filtro, limit, skip, fields, sort) {
+adSchema.statics.list = function(filter) {
+  // Don't use arrow functions on Mongoose methods
+  console.log('WE ARE IN STATICS LIST OF MODEL, filter: ', filter);
+  
+  const query = Ad.find(filter);
+  // const query = Ad.find(filter);
+  // query.limit(limit);
+  // query.skip(skip);
+  // query.select(fields);
+  // query.sort(sort);
+  return query.exec();
+}
 
 // Model
 const Ad = mongoose.model('Ad', adSchema);

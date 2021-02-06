@@ -33,4 +33,9 @@ http://localhost:3000/images/<nombreRecurso>
 By property isType -> http://localhost:3000/api/ads?isType=<value>
   <value> is enum: ["vende", "busca"]
 
+By property name -> http://localhost:3000/api/ads?isType=busca&name=adName
+
+// FIXME: By property tag -> http://localhost:3000/api/ads?isType=busca&name=adName
+
 //TODO: DEcidir si tag va a ser enum -> enum: ["work", "lifestyle", "motor", "mobile"]
+We can mix filters -> http://localhost:3000/api/ads?isType=busca&name=Agenda

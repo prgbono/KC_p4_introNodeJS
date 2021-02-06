@@ -7,7 +7,8 @@ const adSchema = mongoose.Schema({
   name: {
   	type: String,
   	trim: true,
-  	required: true
+    required: true,
+    index: true
   },
   description: {
   	type: String,
@@ -18,7 +19,8 @@ const adSchema = mongoose.Schema({
     type: String,
     // TODO: Validaciones a objetos enum....
     enum: ["vende", "busca"],
-  	required: true
+    required: true,
+    index: true
 	},
   price: {
     type: Number,
@@ -39,9 +41,7 @@ const adSchema = mongoose.Schema({
 adSchema.statics.list = function(filter) {
   // Don't use arrow functions on Mongoose methods
   console.log('WE ARE IN STATICS LIST OF MODEL, filter: ', filter);
-  
   const query = Ad.find(filter);
-  // const query = Ad.find(filter);
   // query.limit(limit);
   // query.skip(skip);
   // query.select(fields);

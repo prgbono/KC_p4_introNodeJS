@@ -33,6 +33,7 @@ We can get images stored in the server directly with the url:
 http://localhost:3000/images/<nombreRecurso>
 
 ### Filters:
+Filters can be applied on HomePage (/) and also /api/ads
 We can filter by names, tags, price and kind of advertisement. 
 The key words to add in the url for properly filtering are **'nombre'**, **'tag'**, **'precio'** and **'venta'** respectively.
 Our 'venta' filter condition is not a boolean, it is an `enum: ["vende", "busca"]` instead.  

@@ -13,6 +13,9 @@
 ### GET /api/ads
 Get a list of ads
 
+### GET /api/tags
+Get a list of current tags 
+
 ### POST /api/ads (body)
 Insert a new ad. Data must be in the body.
 

@@ -32,6 +32,7 @@ const adSchema = mongoose.Schema({
     type: [String],
     // TODO: Let new tags?
     // enum: ["work", "lifestyle", "motor", "mobile"]
+    index: true
 	}
 }, {
   collection: 'anuncios'

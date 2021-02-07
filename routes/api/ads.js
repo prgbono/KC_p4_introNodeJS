@@ -13,13 +13,13 @@ router.get('/', asyncHandler(async function(req, res){
 
   const isType = req.query.isType;
   const name = req.query.name;
-  // const filterByTags = req.query.filterByTags;
+  const tags = req.query.tag;
   // const filterByPrice = req.query.filterByPrice;
 
   const filter = {};
   if (isType) filter.isType = isType;
   if (name) filter.name = { $regex: name, $options: 'i'};
-  // if (filterByTags) {filter.filterByTags = filterByTags}
+  if (tags) {filter.tags = tags}
   // if (filterByPrice) {filter.filterByPrice = filterByPrice}
 
   const response = await Ad.list(filter);

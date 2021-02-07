@@ -4,27 +4,44 @@ var router = express.Router();
 const Ad = require('../../models/Ad');
 const asyncHandler = require('express-async-handler');
 
-// function escapeRegExp(string) {
-//   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-// }
-
 // GET /api/ads -> List ads
 router.get('/', asyncHandler(async function(req, res){  
 
   const isType = req.query.isType;
   const name = req.query.name;
   const tags = req.query.tag;
-  // const filterByPrice = req.query.filterByPrice;
+  const price = req.query.price;
 
   const filter = {};
   if (isType) filter.isType = isType;
   if (name) filter.name = { $regex: name, $options: 'i'};
-  if (tags) {filter.tags = tags}
-  // if (filterByPrice) {filter.filterByPrice = filterByPrice}
-
+  if (tags) filter.tags = tags;
+  if (price) {
+    const priceRangePosition = price.indexOf('-');
+    priceRangePosition === -1 
+      ? filter.price = price
+      : filter.price = calculatePriceRange(priceRangePosition, price.replace('-',''));
+  }
   const response = await Ad.list(filter);
   res.json(response);
 }));
+
+// TODO: Move to a util.js file
+function calculatePriceRange(position, price){
+  switch (position) {
+    case price.length:
+      return {$gt: price}     
+      break;
+    case 0:
+      return {$lt: price}
+      break;
+    default:
+      const min = price.substr(0, position);
+      const max = price.substr(position, price.length);
+      return {$gt: min, $lt: max}
+      break;
+  }
+}
 
 // POST /api/ads (body)
 router.post('/', asyncHandler(async (req, res) => {

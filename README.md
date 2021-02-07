@@ -2,11 +2,11 @@
 # Desarrollo backend con NodeJS. 
 ## Fco Ríos.
 
-#TODO: Explicar cómo ejecutar el proyecto en dos pasos. 
-  1. `npm run installDB` - Inicializa la BBDD.
-  2. `npm run dev` -> Correra un http server en localhost:3000
+## Init the project with these 2 steps
+  1. `npm run installDB` - Init db.
+  2. `npm run dev` -> Run an http server on localhost:3000
 
-## Comando para arrancar MongoDB (mac/linux)
+## You must have a MongoDB local instance running. 
 ./bin/mongod --dbpath ./data/db
 
 ## API Methods
@@ -17,7 +17,7 @@ Get a list of ads
 Insert a new ad. Data must be in the body.
 
 ### PUT /api/ads:id (body)
-Modify ad. TODO: cómo va aquí el body?
+Modify ad. 
 
 ### DELETE /api/ads:id 
 Remove an ad.

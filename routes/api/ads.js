@@ -76,23 +76,4 @@ router.delete('/:id', asyncHandler(async(req, res, next) =>{
   res.json();
 }));
 
-//TODO:
-// GET /api/ad:id
-// router.get('/:id', async (req, res, next) => {
-//   try {
-//     const _id = req.params.id;
-
-//     const agente = await Agente.findOne({ _id: _id });
-
-//     if (!agente) {
-//       return res.status(404).json({ error: 'not found' });
-//     }
-//     res.json({ result: agente });
-
-//   } catch (err) {
-//     next(err);
-//   }
-// });
-
-
 module.exports = router;

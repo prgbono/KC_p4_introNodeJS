@@ -17,7 +17,6 @@ const adSchema = mongoose.Schema({
   },
   isType: {
     type: String,
-    // TODO: Validaciones a objetos enum....
     enum: ["vende", "busca"],
     required: true,
     index: true

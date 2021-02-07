@@ -34,15 +34,15 @@ We can filter by names, tags, price and kind of advertisement.
 The key words to add in the url for properly filtering are **'nombre'**, **'tag'**, **'precio'** and **'venta'** respectively.
 Our 'venta' filter condition is not a boolean, it is an `enum: ["vende", "busca"]` instead.  
 
-By property isType -> http://localhost:3000/api/ads?venta=<value>
+By Model property isType -> http://localhost:3000/api/ads?venta=<value>
   <value> is enum: ["vende", "busca"]
 
-By property name -> http://localhost:3000/api/ads?isType=vende&nombre=ta
+By Model property name -> http://localhost:3000/api/ads?venta=vende&nombre=ta
 
-By property tag -> http://localhost:3000/api/ads?tag=work
-                   http://localhost:3000/api/ads?tag=work&tag=lifestyle 
+By Model property tag -> http://localhost:3000/api/ads?tag=work
+                         http://localhost:3000/api/ads?tag=work&tag=lifestyle 
 
-By property price:
+By Model property price:
   - Price = X http://localhost:3000/api/ads?precio=350.15 
   - Price > X http://localhost:3000/api/ads?precio=200- 
   - Price < X http://localhost:3000/api/ads?precio=-200 

@@ -15,7 +15,6 @@ router.get('/', asyncHandler(async function(req, res){
   const filter = {};
   if (isType) filter.isType = isType;
   if (name) filter.name = { $regex: name, $options: 'i'};
-  console.log('name: ',name);
   
   if (tags) filter.tags = tags;
   if (price) {

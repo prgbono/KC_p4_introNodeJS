@@ -28,7 +28,6 @@ const adSchema = mongoose.Schema({
   },    
   tags: {
     type: [String],
-    // TODO: Let new tags?
     // enum: ["work", "lifestyle", "motor", "mobile"]
     index: true
 	}

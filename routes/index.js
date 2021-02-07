@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-// TODO: Toda validación con express-validator
 
 const Ad = require('./../models/Ad');
 const asyncHandler = require('express-async-handler');

@@ -6,11 +6,12 @@ const asyncHandler = require('express-async-handler');
 
 // GET /api/ads -> List ads
 router.get('/', asyncHandler(async function(req, res){  
-
   const isType = req.query.venta;
   const name = req.query.nombre;
   const tags = req.query.tag;
   const price = req.query.precio;
+  const limit = parseInt(req.query.limit);
+  const skip = parseInt(req.query.skip);
 
   const filter = {};
   if (isType) filter.isType = isType;
@@ -23,7 +24,7 @@ router.get('/', asyncHandler(async function(req, res){
       ? filter.price = price
       : filter.price = calculatePriceRange(priceRangePosition, price.replace('-',''));
   }
-  const response = await Ad.list(filter);
+  const response = await Ad.list(filter, limit, skip);
   res.json(response);
 }));
 

@@ -13,7 +13,6 @@ const adSchema = mongoose.Schema({
   description: {
   	type: String,
   	trim: true,
-  	// TODO: Test all validations and also if this is not required
   },
   isType: {
     type: String,
@@ -37,15 +36,11 @@ const adSchema = mongoose.Schema({
   collection: 'anuncios'
 });
 
-// adSchema.statics.list = function(filtro, limit, skip, fields, sort) {
-adSchema.statics.list = function(filter) {
+adSchema.statics.list = function(filter, limit, skip) {
   // Don't use arrow functions on Mongoose methods
-  console.log('WE ARE IN STATICS LIST OF MODEL, filter: ', filter);
   const query = Ad.find(filter);
-  // query.limit(limit);
-  // query.skip(skip);
-  // query.select(fields);
-  // query.sort(sort);
+  query.limit(limit);
+  query.skip(skip);
   return query.exec();
 }
 

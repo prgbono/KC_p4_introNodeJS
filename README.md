@@ -52,3 +52,9 @@ By Model property price:
   - X > Price > Y http://localhost:3000/api/ads?precio=100-500 
  
 We can mix filters -> http://localhost:3000/api/ads?venta=vende&nombre=ta&precio=50-300&tag=lifestyle
+
+### Pagination:
+We can set the number of items retrieved and shown with the param `limit` in the url:
+*http://localhost:3000/api/ads?limit=4*
+Also available the param `skip` for the next pages in the list (user interaction needed)
+*http://localhost:3000/api/ads?limit=4&skip=4*

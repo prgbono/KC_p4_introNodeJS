@@ -44,7 +44,7 @@
     "tags": ["lifestyle", "motor"]
   }, {
     "name": "Tabla de padel surf",
-    "isType": "busca", 
+    "isType": "vende", 
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta malesuada ex, rutrum mattis velit hendrerit sed.",
     "price": 60.00,
     "image": "/images/padel.jpg",

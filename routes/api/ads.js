@@ -7,14 +7,16 @@ const asyncHandler = require('express-async-handler');
 // GET /api/ads -> List ads
 router.get('/', asyncHandler(async function(req, res){  
 
-  const isType = req.query.isType;
-  const name = req.query.name;
+  const isType = req.query.venta;
+  const name = req.query.nombre;
   const tags = req.query.tag;
-  const price = req.query.price;
+  const price = req.query.precio;
 
   const filter = {};
   if (isType) filter.isType = isType;
   if (name) filter.name = { $regex: name, $options: 'i'};
+  console.log('name: ',name);
+  
   if (tags) filter.tags = tags;
   if (price) {
     const priceRangePosition = price.indexOf('-');

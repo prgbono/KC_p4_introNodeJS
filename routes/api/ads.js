@@ -1,49 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const Ad = require('../../models/Ad');
 const asyncHandler = require('express-async-handler');
+const adsProvider = require('../../lib/adsProvider');
 
 // GET /api/ads -> List ads
 router.get('/', asyncHandler(async function(req, res){  
-  const isType = req.query.venta;
-  const name = req.query.nombre;
-  const tags = req.query.tag;
-  const price = req.query.precio;
-  const limit = parseInt(req.query.limit);
-  const skip = parseInt(req.query.skip);
-
-  const filter = {};
-  if (isType) filter.isType = isType;
-  if (name) filter.name = { $regex: name, $options: 'i'};
-  
-  if (tags) filter.tags = tags;
-  if (price) {
-    const priceRangePosition = price.indexOf('-');
-    priceRangePosition === -1 
-      ? filter.price = price
-      : filter.price = calculatePriceRange(priceRangePosition, price.replace('-',''));
-  }
-  const response = await Ad.list(filter, limit, skip);
+  const response = await adsProvider.getAds(req);
   res.json(response);
 }));
-
-// TODO: Move to a util.js file
-function calculatePriceRange(position, price){
-  switch (position) {
-    case price.length:
-      return {$gt: price}     
-      break;
-    case 0:
-      return {$lt: price}
-      break;
-    default:
-      const min = price.substr(0, position);
-      const max = price.substr(position, price.length);
-      return {$gt: min, $lt: max}
-      break;
-  }
-}
 
 // POST /api/ads (body)
 router.post('/', asyncHandler(async (req, res) => {

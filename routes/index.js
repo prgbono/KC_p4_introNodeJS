@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-const Ad = require('./../models/Ad');
 const asyncHandler = require('express-async-handler');
+const adsProvider = require('../lib/adsProvider');
 
 /* GET / -> homePage */
 router.get('/', asyncHandler(async function(req, res, next) {
-  res.locals.ads = await Ad.find();
+  res.locals.ads = await adsProvider.getAds(req);
   res.render('index', { title: 'NodePop' });
 }));
 
